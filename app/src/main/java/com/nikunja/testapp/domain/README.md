@@ -1,6 +1,6 @@
 # Domain Layer
 
-The domain layer contains the business logic of the application. It is completely independent of any framework or external library, making it highly testable and reusable.
+The domain layer contains the core business logic for Flavor. It is completely independent of any framework or external library, making it highly testable and reusable.
 
 ## Structure
 
@@ -17,7 +17,7 @@ domain/
 ### Models
 
 #### Item
-Core business model representing an item:
+Core business model representing a recipe:
 ```kotlin
 data class Item(
     val id: Int,
@@ -58,8 +58,8 @@ Each use case represents a single business action:
 | Use Case | Description |
 |----------|-------------|
 | `GetCurrentUserUseCase` | Retrieves the currently authenticated user |
-| `GetItemsUseCase` | Observes items from repository |
-| `RefreshItemsUseCase` | Triggers data refresh |
+| `GetItemsUseCase` | Observes recipes from repository |
+| `RefreshItemsUseCase` | Triggers recipe data refresh |
 | `SignInWithGoogleUseCase` | Handles Google authentication |
 | `SignOutUseCase` | Signs out the current user |
 

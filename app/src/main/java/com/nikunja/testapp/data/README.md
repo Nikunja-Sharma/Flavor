@@ -1,6 +1,6 @@
 # Data Layer
 
-The data layer is responsible for data operations including network requests and local database access. It implements the repository interfaces defined in the domain layer.
+The data layer handles all data operations for Flavor including network requests and local database access. It implements the repository interfaces defined in the domain layer.
 
 ## Structure
 
@@ -25,20 +25,20 @@ data/
 Room database configuration with entity definitions.
 
 #### ItemDao
-Data Access Object for CRUD operations on items:
-- `getAllItems()` - Flow of all items
-- `getItemById(id)` - Single item lookup
+Data Access Object for CRUD operations on recipes/items:
+- `getAllItems()` - Flow of all recipes
+- `getItemById(id)` - Single recipe lookup
 - `insertItems(items)` - Batch insert with conflict resolution
-- `deleteAllItems()` - Clear all items
+- `deleteAllItems()` - Clear all cached recipes
 
 #### ItemEntity
-Room entity representing an item in the database. Includes mapping functions to/from domain models.
+Room entity representing a recipe in the database. Includes mapping functions to/from domain models.
 
 ### Remote
 
 #### ApiService
 Retrofit interface defining API endpoints:
-- `GET /items` - Fetch all items
+- `GET /items` - Fetch all recipes
 
 #### ItemDto
 Data Transfer Object for API responses. Includes `toDomain()` mapping function.

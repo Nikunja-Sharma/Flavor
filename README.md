@@ -1,10 +1,13 @@
-# TestApp - Android Clean Architecture Demo
+# Flavor 🍽️
 
-A production-ready Android application demonstrating Clean Architecture with MVVM pattern, built entirely with Kotlin and Jetpack Compose.
+A modern Android recipe and food discovery app built with Clean Architecture and Jetpack Compose.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Nikunja--Sharma%2FFlavor-blue?logo=github)](https://github.com/Nikunja-Sharma/Flavor)
 
 ## Features
 
 - 🔐 Google Sign-In authentication via Firebase
+- 🍳 Discover and browse recipes
 - 📱 Modern Material 3 UI with dynamic theming
 - 🏗️ Clean Architecture with clear separation of concerns
 - 💉 Dependency injection with Hilt
@@ -77,7 +80,7 @@ com.nikunja.testapp
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/Nikunja-Sharma/Flavor.git
 
 # Open in Android Studio and sync Gradle
 
@@ -103,7 +106,7 @@ Presentation layer using Jetpack Compose with MVVM pattern. ViewModels expose st
 | Screen | Description |
 |--------|-------------|
 | Login | Google Sign-In authentication |
-| Home | Item list with pull-to-refresh |
+| Home | Recipe list with pull-to-refresh |
 | Profile | User info and sign-out |
 
 ## Configuration
@@ -119,6 +122,11 @@ Set your Google OAuth client ID in `strings.xml`:
 ```xml
 <string name="default_web_client_id">your-client-id</string>
 ```
+
+## Author
+
+**Nikunja Sharma**
+- GitHub: [@Nikunja-Sharma](https://github.com/Nikunja-Sharma)
 
 ## License
 

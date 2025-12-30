@@ -1,6 +1,6 @@
 # UI Layer
 
-The presentation layer built entirely with Jetpack Compose following MVVM pattern. All UI components are stateless and receive state from ViewModels via StateFlow.
+The presentation layer for Flavor, built entirely with Jetpack Compose following MVVM pattern. All UI components are stateless and receive state from ViewModels via StateFlow.
 
 ## Structure
 
@@ -8,10 +8,10 @@ The presentation layer built entirely with Jetpack Compose following MVVM patter
 ui/
 ├── navigation/      # Compose Navigation setup
 ├── screens/         # Feature screens
-│   ├── home/        # Home screen (items list)
+│   ├── home/        # Home screen (recipe list)
 │   ├── login/       # Login screen (Google Sign-In)
 │   └── profile/     # Profile screen (user info)
-└── theme/           # Material 3 theme
+└── theme/           # Flavor Material 3 theme
 ```
 
 ## Navigation
@@ -39,7 +39,7 @@ sealed class Screen(val route: String) {
 - Auto-navigates on successful login
 
 ### Home Screen
-- Displays items in LazyColumn
+- Displays recipes in LazyColumn
 - Pull-to-refresh functionality
 - Empty state and error handling
 - Profile navigation via TopAppBar action
@@ -78,7 +78,7 @@ fun FeatureScreen(viewModel: FeatureViewModel = hiltViewModel()) {
 ## Theme
 
 ### FlavorTheme
-Material 3 theme with:
+Flavor's Material 3 theme with:
 - Light and dark color schemes
 - Dynamic color support (Android 12+)
 - Custom typography scale
