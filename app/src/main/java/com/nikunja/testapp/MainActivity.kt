@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.rememberNavController
 import com.nikunja.testapp.ui.navigation.NavGraph
-import com.nikunja.testapp.ui.theme.TestAppTheme
+import com.nikunja.testapp.ui.theme.FlavorTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            TestAppTheme {
+            FlavorTheme {
                 val navController = rememberNavController()
                 NavGraph(navController = navController)
             }

@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.nikunja.testapp.data.local.dao.ItemDao
 import com.nikunja.testapp.data.local.database.AppDatabase
 import com.nikunja.testapp.data.remote.api.ApiService
+import com.nikunja.testapp.data.remote.interceptor.AuthInterceptor
 import com.nikunja.testapp.data.repository.ItemRepositoryImpl
 import com.nikunja.testapp.domain.repository.ItemRepository
 import dagger.Module
@@ -25,11 +26,16 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
+    fun provideAuthInterceptor(): AuthInterceptor = AuthInterceptor()
+
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(authInterceptor: AuthInterceptor): OkHttpClient {
         val loggingInterceptor = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
         return OkHttpClient.Builder()
+            .addInterceptor(authInterceptor)
             .addInterceptor(loggingInterceptor)
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
